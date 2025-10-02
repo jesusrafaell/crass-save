@@ -1,0 +1,28 @@
+{
+	"Index": {
+		"title": "My Appssistance"
+	},
+	"Dashboard": {
+		"viewmore": "Ver mas",
+		"status": "Estado",
+		"realtime": "Tiempo Real",
+		"service": "{status} Services"
+	},
+	"Login": {
+		"title": "Sign in to your account",
+		"login": "Log In",
+		"remember": "Remember me",
+		"email": "E-mail",
+		"password": "Password",
+		"invalidemail": "Enter a valid email.",
+		"required": "{field} is required.",
+		"minpassword": "You must complete at least eight (8) characters",
+		"maxpassword": "You must complete a maximum of twelve (12) characters",
+		"welcome": "Welcome {name} 🤝",
+		"goodbye": "See you later 👋"
+	},
+	"NavBar": {
+		"logout": "Log Out",
+		"signedas": "Signed in as"
+	}
+}

@@ -1,0 +1,28 @@
+{
+	"Index": {
+		"title": "My Appssistance"
+	},
+	"Dashboard": {
+		"viewmore": "Ver mas",
+		"status": "Estado",
+		"realtime": "Tiempo Real",
+		"service": "Servicios {status}"
+	},
+	"Login": {
+		"title": "Acceda a su cuenta",
+		"login": "Iniciar sesión",
+		"remember": "Recuerdame",
+		"email": "Correo",
+		"password": "Contraseña",
+		"invalidemail": "Ingrese un correo válido.",
+		"required": "{field} es obligatorio.",
+		"minpassword": "Debe completar al menos ocho (8) caracteres",
+		"maxpassword": "Debe completar máximo doce (12) caracteres",
+		"welcome": "Bienvenido {name} 🤝",
+		"goodbye": "Hasta luego 👋"
+	},
+	"NavBar": {
+		"logout": "Cerrar sesión",
+		"signedas": "Conectado como"
+	}
+}

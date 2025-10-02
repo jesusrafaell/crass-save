@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  dashboard:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: dashboard
+    container_name: dashboard
+    ports:
+      - "3015:3015"
