@@ -1,0 +1,36 @@
+version: "3.8"
+services:
+  gateway:
+    build:
+      context: ./gateway
+      dockerfile: Dockerfile
+    container_name: gateway
+    ports:
+      - "3000:3000"
+    networks:
+      - network
+    command: ["./app"]
+
+  users:
+    build:
+      context: ./users
+      dockerfile: Dockerfile
+    container_name: users
+    ports:
+      - "4005:4005"
+    networks:
+      - network
+
+  assistance:
+    build:
+      context: ./assistance
+      dockerfile: Dockerfile
+    container_name: assistance
+    ports:
+      - "8000:8000"
+    networks:
+      - network
+
+networks:
+  network:
+    external: true

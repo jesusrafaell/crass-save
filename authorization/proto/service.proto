@@ -1,0 +1,67 @@
+syntax = "proto3";
+
+package auth;
+
+option go_package = "crashsaver/auth/proto";
+
+service AuthService {
+    //token
+    rpc GenerateToken(CreateAuth) returns (TokenResponse);
+    rpc VerifyToken(TokenRequest) returns (VerifyTokenReponse);
+
+    //session
+    rpc GenerateSession(CreateAuth) returns (TokenResponse);
+    rpc RefreshSession(CreateAuth) returns (TokenResponse);
+    rpc GetSession(SessionUserRequest) returns (SessionResponse);
+    rpc VerifySession(TokenRequest) returns (SessionResponse);
+    rpc DeleteSession(TokenRequest) returns (ErrorResponse);
+    rpc CloseSession(TokenRequest) returns (ErrorResponse);
+}
+
+message CreateAuth {
+    Claims claims = 1;
+    uint32 expHours = 2;
+}
+
+message Claims {
+    string userId = 1;
+    string email = 2;
+    string roleKey = 3;
+    string companyKey = 4;
+    string os = 5;
+}
+
+message TokenRequest {
+    string token = 1;
+    bool IgnoreSession = 2;
+}
+
+message SessionUserRequest {
+    string userId = 1;
+}
+
+message TokenResponse {
+    string token = 1;
+    ErrorResponse error = 2;
+}
+
+message VerifyTokenReponse {
+    Claims claims = 1;
+    ErrorResponse error = 2;
+}
+
+message SessionResponse {
+    Claims claims = 1;
+    string sessionId = 2;
+    ErrorResponse error = 3;
+}
+
+message ErrorResponse {
+    string msgError = 1;
+    string codeError = 2;
+}
+
+message ErrorAuth {
+  string code = 1;
+  string name = 2;
+}

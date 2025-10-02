@@ -1,0 +1,44 @@
+version: "3.8"
+
+services:
+  sentinel-1:
+    image: redis:latest
+    container_name: sentinel-1
+    hostname: sentinel-1
+    networks:
+      - network
+    depends_on:
+      - redis-db
+    ports:
+      - "26379:26379"
+    command: >
+      sh -c 'echo "bind 0.0.0.0" > /etc/sentinel.conf &&
+            echo "sentinel monitor mymaster redis-db 6379 2" >> /etc/sentinel.conf &&
+            echo "sentinel down-after-milliseconds mymaster 10000" >> /etc/sentinel.conf &&
+            echo "sentinel failover-timeout mymaster 10000" >> /etc/sentinel.conf &&
+            echo "sentinel parallel-syncs mymaster 1" >> /etc/sentinel.conf &&
+            echo "sentinel auth-pass mymaster Test123." >> /etc/sentinel.conf &&
+            redis-sentinel /etc/sentinel.conf'
+
+  sentinel-2:
+    image: redis:latest
+    container_name: sentinel-2
+    hostname: sentinel-2
+    networks:
+      - network
+    depends_on:
+      - redis-db
+    ports:
+      - "26380:26379"
+    command: >
+      sh -c 'echo "bind 0.0.0.0" > /etc/sentinel.conf &&
+            echo "sentinel monitor mymaster redis-db 6379 2" >> /etc/sentinel.conf &&
+            echo "sentinel down-after-milliseconds mymaster 10000" >> /etc/sentinel.conf &&
+            echo "sentinel failover-timeout mymaster 10000" >> /etc/sentinel.conf &&
+            echo "sentinel parallel-syncs mymaster 1" >> /etc/sentinel.conf &&
+            echo "sentinel auth-pass mymaster Test123." >> /etc/sentinel.conf &&
+            redis-sentinel /etc/sentinel.conf'
+
+networks:
+  network:
+    external: true

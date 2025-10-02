@@ -1,0 +1,82 @@
+version: "3.8"
+
+# 172.29.0.2
+services:
+  redis-db:
+    image: redis:latest
+    container_name: redis-db
+    hostname: redis-db
+    networks:
+      network:
+    ports:
+      - "6379:6379"
+    command: >
+      redis-server --appendonly yes --requirepass "mya123app" --protected-mode no
+
+  redis-slave-1:
+    image: redis:latest
+    container_name: redis-slave-1
+    hostname: redis-slave-1
+    networks:
+      - network
+    depends_on:
+      - redis-db
+    ports:
+      - "6380:6379"
+    command: >
+      redis-server --replicaof redis-db 6379 --masterauth "mya123app" --appendonly yes --protected-mode no
+
+  redis-slave-2:
+    image: redis:latest
+    container_name: redis-slave-2
+    hostname: redis-slave-2
+    networks:
+      - network
+    depends_on:
+      - redis-db
+    ports:
+      - "6381:6379"
+    command: >
+      redis-server --replicaof redis-db 6379 --masterauth "mya123app" --appendonly yes --protected-mode no
+
+  sentinel-1:
+    image: redis:latest
+    container_name: sentinel-1
+    hostname: sentinel-1
+    networks:
+      - network
+    depends_on:
+      - redis-db
+    ports:
+      - "26379:26379"
+    command: >
+      sh -c 'echo "bind 0.0.0.0" > /etc/sentinel.conf &&
+            echo "sentinel monitor mymaster 172.29.0.2 6379 2" >> /etc/sentinel.conf &&
+            echo "sentinel down-after-milliseconds mymaster 10000" >> /etc/sentinel.conf &&
+            echo "sentinel failover-timeout mymaster 10000" >> /etc/sentinel.conf &&
+            echo "sentinel parallel-syncs mymaster 1" >> /etc/sentinel.conf &&
+            echo "sentinel auth-pass mymaster mya123app" >> /etc/sentinel.conf &&
+            redis-sentinel /etc/sentinel.conf'
+
+  sentinel-2:
+    image: redis:latest
+    container_name: sentinel-2
+    hostname: sentinel-2
+    networks:
+      - network
+    depends_on:
+      - redis-db
+    ports:
+      - "26380:26379"
+    command: >
+      sh -c 'echo "bind 0.0.0.0" > /etc/sentinel.conf &&
+            echo "sentinel monitor mymaster 172.29.0.2 6379 2" >> /etc/sentinel.conf &&
+            echo "sentinel down-after-milliseconds mymaster 10000" >> /etc/sentinel.conf &&
+            echo "sentinel failover-timeout mymaster 10000" >> /etc/sentinel.conf &&
+            echo "sentinel parallel-syncs mymaster 1" >> /etc/sentinel.conf &&
+            echo "sentinel auth-pass mymaster mya123app" >> /etc/sentinel.conf &&
+            redis-sentinel /etc/sentinel.conf'
+
+networks:
+  network:
+    external: true

@@ -1,0 +1,31 @@
+# Binaries for the current project
+# Go binaries are often named after the directory they're built in.
+# If your main package is in a directory named 'myproject', the binary might be 'myproject'
+# You can also explicitly ignore the binary name if you know it, e.g., /myproject
+# Or, if you build into a 'bin' directory:
+/bin/
+
+# Dependency caches
+# Go module cache (if not using vendoring)
+.go/
+pkg/
+
+# Test output
+# Test reports or coverage files
+*.test
+*.out
+
+# Editor-specific files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Operating System specific files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+/bin/*
+.env.*

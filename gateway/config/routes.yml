@@ -1,0 +1,21 @@
+gateway:
+  routes:
+    - target: http://users:4005
+      contexts:
+        - name: Users
+          context: /api/v1/users
+        - name: Auth
+          context: /api/v1/auth
+        - name: File
+          context: /api/v1/file
+        - name: Version
+          context: /api/v1/version
+        - name: Verify Token
+          context: /api/v1/verify-token
+
+    - target: http://assistance:8000
+      contexts:
+        - name: Drive Assist
+          context: /api/v1/assistance
+        - name: Drive Assist V2
+          context: /api/v2/assistance

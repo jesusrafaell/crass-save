@@ -1,0 +1,105 @@
+package repositories
+
+// var selectFieldsAssistence = `
+//     --base
+//     aar.id,
+//     aar.created_at,
+//     aar.description,
+//     --info
+//     aar.active,
+//     aar.price,
+//     aar.stars,
+
+//     --distances
+//     aar.dis_from_to,
+//     aar.dis_driver_user,
+//     aar.total_distance,
+
+//     --times
+//     aar.accepted_time,
+//     aar.to_user_time,
+//     aar.arrived_user_time,
+//     aar.to_destination_time,
+//     aar.arrived_destination_time,
+//     aar.driver_completed_time,
+//     aar.finish_time,
+
+//     --from
+//     aar.from_latitude AS "from.latitude",
+//     aar.from_longitude AS "from.longitude",
+//     aar.from_address AS "from.address",
+
+//     --to
+//     aar.to_latitude AS "to.latitude",
+//     aar.to_longitude AS "to.longitude",
+//     aar.to_address AS "to.address",
+//     aar.to_description AS "to.description",
+
+//     aar.accepted_driver_latitude AS "accepted.latitude",
+//     aar.accepted_driver_longitude AS "accepted.longitude"
+// `
+
+// var selectAllFieldsAssistence = `
+//    aar.id,
+//     aar.created_at,
+//     aar.updated_at,
+//     aar.deleted_at,
+//     aar.description,
+//     aar.user_id,
+//     aar.vehicle_id,
+//     aar.from_latitude,
+//     aar.from_longitude,
+//     aar.from_address,
+//     aar.to_latitude,
+//     aar.to_longitude,
+//     aar.to_address,
+//     aar.to_description,
+//     aar.driver_id,
+//     aar.tow_truck_id,
+//     aar.driver_latitude,
+//     aar.driver_longitude,
+//     aar.dis_from_to,
+//     aar.dis_driver_user,
+//     aar.total_distance,
+//     aar.accepted_time,
+//     aar.to_user_time,
+//     aar.arrived_user_time,
+//     aar.to_destination_time,
+//     aar.arrived_destination_time,
+//     aar.driver_completed_time,
+//     aar.finish_time,
+//     aar.image_path_1,
+//     aar.image_path_2,
+//     aar.accepted_driver_latitude,
+//     aar.accepted_driver_longitude,
+//     aar.touser_driver_latitude,
+//     aar.touser_driver_longitude,
+//     aar.arriveduser_driver_latitude,
+//     aar.arriveduser_driver_longitude,
+//     aar.image_path_3,
+//     aar.image_path_4,
+//     aar.to_destination_driver_latitude,
+//     aar.to_destination_driver_longitude,
+//     aar.arrived_des_driver_latitude,
+//     aar.arrived_des_driver_longitude,
+//     aar.status_id,
+//     aar.active,
+//     aar.price,
+//     aar.coin_id,
+//     aar.confirmed,
+//     aar.ws,
+//     aar.insurance_id,
+//     aar.driver_pick_car,
+//     aar.driver_observations,
+//     aar.driver_damage,
+//     aar.total_time,
+//     aar.driver_distance,
+//     aar.image_path_5,
+//     aar.image_path_6,
+//     aar.user_observations,
+//     aar.user_pick_car,
+//     aar.user_damage,
+//     aar.user_distance,
+//     aar.stars,
+//     aar.company_i
+// `
