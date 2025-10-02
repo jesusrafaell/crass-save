@@ -1,0 +1,193 @@
+{
+  "App": {
+    "loginDirection": "Log In as",
+    "companyMode": "company",
+    "parkingMode": "parking",
+    "welcomeTitle": "Welcome to the Dashboard of {type}",
+    "welcomeSubtitle": "Select an option from the side menu to start",
+    "login": "login",
+    "logout": "logout",
+    "loading": "loading",
+    "language": "language",
+    "auth": "authentication",
+    "name": "name",
+    "amount": "amount",
+    "month": "month",
+    "year": "year",
+    "password": "password",
+    "update": "update",
+    "status": "status",
+    "services": "services",
+    "errorMail": "Please enter a valid email",
+    "errorPassword": "Please enter a valid password",
+    "edit": "edit",
+    "delete": "delete",
+    "viewservices": "view services",
+    "balance": "balance",
+    "cancel": "cancel",
+    "SideBar": {
+      "booking": "booking",
+      "create": "create",
+      "all": "see all",
+      "credits": "credits",
+      "purchase": "purchase",
+      "faq": "FAQ",
+      "driver": "Driver"
+    },
+    "Modals": {
+      "changestatus": "Change the {text} status",
+      "deletebooking": "Cancel {text}",
+      "cardholder": "card holder",
+      "code": "code",
+      "cardpayment": "Pay with card",
+      "cardnumber": "card number",
+      "expireIn": "expires on",
+      "agreement": "By providing your card details, you authorize the Company to charge your card for future payments in accordance with its terms and <guidelines>conditions</guidelines>.",
+      "subtotal": "subtotal",
+      "total": "total",
+      "pay": "pay",
+      "sessionexpired": "Your session has expired",
+      "sessionexpiredIndication": "Please log in again to continue using the app",
+      "asigndriver": "Assign driver"
+    }
+  },
+
+  "dashboard": {
+    "welcome": "Welcome to Parkinglot",
+    "cards": {
+      "totalParkingsTitle": "Total Parkings",
+      "totalBookingActiveTitle": "Active Bookings",
+      "totalBookingsActiveCta": "See all",
+      "totalBookingCompletedTitle": "Bookings Completed",
+      "totalBookingCompletedCta": "Create",
+      "infoBuyCredits": {
+        "title": "Credits",
+        "buyCredits": "To buy credits: select a plan or enter the amount you want, fill out the information, pay and you can use your credits for reservations.",
+        "cta": "BUY NOW",
+        "goToFaqs": "If you don't know how to carry out the process, access the following link",
+        "faqsCta": "How to buy?"
+      },
+      "bookings": {
+        "title": "Reservations",
+        "helpText": "You can reserve a stay in a parking lot taking into account the arrival and departure dates, number of hours, among other information.",
+        "faqsCta": "How to create a reservation?"
+      }
+    }
+  },
+  "credits": {
+    "buy": {
+      "checkout": "Go to checkout",
+      "planstitle": "Plans for your bookings",
+      "selectPlan": "Select the plan that best suits your needs",
+      "classic": "classic",
+      "custom": "custom",
+      "credits": "{count, plural, =0 {credits} =1 {credit} other {credits}}",
+      "unlimited": "unlimited",
+      "customAmount": "Preferred amount",
+      "purchased": "Your purchase was successful",
+      "description": "description",
+      "errormessage": "The description cannot be more than {number} characters"
+    },
+    "purchased": {
+      "success": "Purchased successfully!",
+      "error": "There was an error when making the purchase",
+      "redirectGood": "To view the credits you will be redirected to the Home.",
+      "redirectError": "You will be redirected to {credits} -> {purchase}"
+    }
+  },
+  "bookingTable": {
+    "tabletitle": "Bookings Table",
+    "user": "user",
+    "checkin": "check in",
+    "checkout": "check out",
+    "hours": "hours",
+    "licensePlate": "license plate",
+    "price": "price",
+    "parking": "parking",
+    "status": "status",
+    "desc": "description",
+    "createdat": "created at",
+    "services": "services",
+    "actions": "actions",
+    "driver": "driver",
+    "viewAll": "View All",
+    "bookingExpired": "Your booking has expired."
+  },
+  "createBooking": {
+    "title": "Create booking",
+    "subtitle": "Fill in the booking creation form",
+    "checkin": "check in",
+    "checkout": "check out",
+    "houramount": "number of hours",
+    "licensePlate": "license plate",
+    "containerLicensePlate": "trailer license plate",
+    "parking": "parking",
+    "availableServices": "services available",
+    "desc": "description",
+    "create": "create booking",
+    "successfull": "booking created",
+    "price": "Price"
+  },
+  "faq": {
+    "title": "Frequently Ask Questions",
+    "subtitle": "In this section you will find all the information about our services.",
+    "q1": {
+      "title": "How to create a booking?",
+      "subtitle": "To create a booking it is necessary to follow the following steps:",
+      "p1": "Enter the scheduled date of entry to the parking lot, followed by the date of departure.",
+      "p3": "Enter the license plate of the truck that will enter the parking lot.",
+      "p4": "Enter the license plate number of the trailer that will enter the parking lot.",
+      "p5": "Select the parking lot where the booking will be made.",
+      "p7": "(Optional) Add a description to your booking.",
+      "p8": "Finish by pressing the ''{text}'' button."
+    },
+    "q2": {
+      "title": "How to buy credits for your bookings?",
+      "subtitle": "To purchase credits you must do the following:",
+      "p1": "Select a specific plan from those available in the list.",
+      "p2": "Press the button ''{text}''.",
+      "p3": "Fill in the card payment form with the information corresponding to the buyer (Name, Card No., Month, Year, CCV).",
+      "p4": "Finalize the purchase by pressing on the button ''{text}''."
+    },
+    "parking": {
+      "q1": {
+        "title": "How to see the reservations assigned to your parking lot?",
+        "subtitle": "To view all bookings you must do the following:",
+        "p1": "In the side menu click on ''{booking}'' and then ''{all}''.",
+        "p2": "In the table you can see the corresponding booking fields, and two buttons: ''{edit}'' to change the reservation status and ''{delete}'' to delete the reservation assigned to your parking lot."
+      }
+    }
+  },
+  "drivers": {
+    "mobile": "Mobile Number",
+    "role": "Role",
+    "actions": "Actions",
+    "tableloading": "Loading drivers...",
+    "status": "Status",
+    "title": "Driver list",
+    "register": "Register",
+    "modaltitle": "Driver registration"
+  },
+  "termAndConditions": {
+    "title": "Terms and Conditions",
+    "effectiveDate": "Effective date: 01/05/2024",
+    "introductionTitle": "Introduction",
+    "introductionText": "Welcome to Crash Saver SL! As you have just clicked on our Terms of Service, please read the following pages carefully.",
+    "introductionText1": "Thank you for being responsible.",
+    "refundsTitle": "Refunds",
+    "refundsText": "In accordance with the provisions of articles 102 et seq. of Royal Legislative Decree 1/2007, of November 16, which approves the consolidated text of the General Law for the Defense of Consumers and Users and other complementary laws, you may withdraw from purchases made through this website within 14 calendar days following receipt of the goods or products, you only have to complete and send us the attached form within the aforementioned period and by any means that allows it to be accredited, either by certified mail or email to the address administracion@crashsaverapp.com",
+    "refundsText1": "In case of withdrawal, you must return said goods or products to this company within 14 calendar days from the date on which you communicated your decision, with the return costs to be borne by the customer. This withdrawal cannot take place in the case of goods or products that may deteriorate or expire quickly, sealed goods or products that are not suitable for return for health or hygiene reasons, or that have been unsealed, or in any other cases provided for in the art. 103 of the aforementioned legal regulations.",
+    "companyTitle": "Company details",
+    "companyName": "Crash Saver SL",
+    "companyCif": "CIF: B10823417",
+    "companyAddress": "Address: Calle Palazón N12, Molina de Segura. Murcia Postal Code: 30500",
+    "companyContact": "Phone: (+34) 628 65 34 07",
+    "companyMail": "Email: administracion@crashsaverapp.com",
+    "acceptConditionsCheck": "I accept the terms and conditions",
+    "continueCta": "Continue and pay",
+    "copyrigth": "All rights reserved",
+    "alertAssistence": "Need emergency assistance for your vehicle in any European Union country?",
+    "assistenceCall1": "Call",
+    "assistenceCall2": "for immediate help."
+  }
+}

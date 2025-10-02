@@ -1,0 +1,19 @@
+FROM golang:alpine AS builder
+
+WORKDIR /app
+
+COPY . .
+
+RUN go mod download
+
+RUN go build -o bin/app main.go
+
+FROM alpine:latest
+
+WORKDIR /app
+
+COPY --from=builder /app/bin/app .
+COPY --from=builder /app/config/routes.prod.yml ./config/
+COPY --from=builder /app/env.production ./.env
+
+CMD ["./app"]

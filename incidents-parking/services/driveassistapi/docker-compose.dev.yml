@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  crashsaver-driveassist:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    image: crashsaver-driveassist-dev
+    container_name: crashsaver-driveassist-dev
+    ports:
+      - "8000:8000"

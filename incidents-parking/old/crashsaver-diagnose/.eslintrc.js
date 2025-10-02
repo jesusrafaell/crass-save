@@ -1,0 +1,35 @@
+module.exports = {
+  env: {
+    es2021: true,
+    node: true,
+    jest: true,
+  },
+  extends: ["airbnb-base"],
+  parser: "@typescript-eslint/parser",
+  parserOptions: {
+    ecmaVersion: 12,
+    sourceType: "module",
+  },
+  plugins: ["@typescript-eslint", "import", "jest"],
+  rules: {
+    quotes: ["error", "double", { avoidEscape: true }],
+    "lines-between-class-members": "off",
+    "no-console": "off",
+    "import/no-unresolved": "off",
+    "import/extensions": "off",
+    "import/prefer-default-export": "off",
+    "no-underscore-dangle": "off",
+    "no-plusplus": "off",
+    "class-methods-use-this": "off",
+    "no-await-in-loop": "off",
+    "jest/no-disabled-tests": "warn",
+    "jest/no-focused-tests": "error",
+    "jest/no-identical-title": "error",
+    "jest/prefer-to-have-length": "warn",
+    "jest/valid-expect": "error",
+    "linebreak-style": [
+      "error",
+      process.platform === "win32" ? "windows" : "unix",
+    ],
+  },
+};

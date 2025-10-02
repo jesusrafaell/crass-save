@@ -1,0 +1,9 @@
+node_modules
+dist
+/static/
+yarn.lock
+package-lock.json
+.vscode
+CA_root.crt
+cert.pem*
+key.pem*

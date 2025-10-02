@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  api-aws-file:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: api-aws-file
+    container_name: api-aws-file
+    ports:
+      - "4007:4007"

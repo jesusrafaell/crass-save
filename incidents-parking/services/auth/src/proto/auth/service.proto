@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package fcm;
+
+option go_package = "crashsaver/auth/proto";
+
+service AuthService {
+    rpc Session(TokenRequest) returns (TokenResponse);
+    rpc VerifyToken(TokenRequest) returns (TokenResponse);
+    rpc GetUser(GetUserRequest) returns (GetUserResponse);
+}
+
+
+message TokenRequest {
+    string token = 1;
+}
+
+message TokenResponse {
+    string userId = 1;
+    string email = 2;
+    string os = 3;
+    string role = 4;
+    string msgError = 5;
+    int32 codeError = 6;
+}
+
+message User {
+    string id = 1;
+    string email = 2;
+    string firstName = 3;
+    string lastName = 4;
+    string mobile = 5;
+    int32  distanceRadius = 6;
+    string fcmToken = 7;
+    string statusEN = 8;
+}
+
+message GetUserRequest {
+    string userId = 1;
+}
+
+message GetUserResponse {
+    User user = 1;
+}

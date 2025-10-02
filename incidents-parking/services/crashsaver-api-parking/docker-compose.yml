@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  api-parking:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: api-parking
+    container_name: api-parking
+    ports:
+      - "4004:4004"

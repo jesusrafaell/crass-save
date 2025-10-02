@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: ["node", "dist/app.js"]
+    ports:
+      - "4005:4005"

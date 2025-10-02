@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  crashsaver-gateway:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: crashsaver-gateway
+    container_name: crashsaver-gateway
+    ports:
+      - "3000:3000"

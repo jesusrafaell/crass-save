@@ -1,0 +1,17 @@
+version: 0.2
+phases:
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - aws ecr get-login-password --region eu-west-3 | docker login --username AWS --password-stdin 559120232621.dkr.ecr.eu-west-3.amazonaws.com
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building the Docker image...
+      - docker build -t incidents .
+      - docker tag api:latest 559120232621.dkr.ecr.eu-west-3.amazonaws.com/incidents:latest
+  post_build:
+    commands:
+      - echo Build completed
+      - echo Pushing the Docker image...
+      - docker push 559120232621.dkr.ecr.eu-west-3.amazonaws.com/incidents:latest

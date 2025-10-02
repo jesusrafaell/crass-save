@@ -1,0 +1,200 @@
+syntax = "proto3";
+
+package incidents;
+
+option go_package = "crashsaver/incident/proto";
+
+// ========================= ENUMERATIONS =========================
+enum Status {
+    UNKNOWN = 0;
+    ACTIVE = 1;
+    IN_PROGRESS = 2;
+    RESOLVED = 3;
+}
+
+// ========================= INCIDENT MODELS =========================
+
+message IncidentStatic {
+    string id = 1;
+    double latitude = 2;
+    double longitude = 3;
+    Status status = 4;
+    string user_id = 5;
+    string description = 6;
+    string incident_type_id = 7;
+    double  distance = 8; 
+    string create_user_id = 9;
+    bool verify_user = 10;
+    int64 created_time = 11;
+    int64 updated_time = 12;
+    int32 icon = 13;
+}
+
+message IncidentMobile {
+    string id = 1;
+    double latitude = 2;
+    double longitude = 3;
+    Status status = 4;
+    string user_id = 5;
+    string transport_id = 6;
+    int64 created_time = 7;
+    int64 updated_time = 8;
+}
+
+// ========================= TRANSPORT MODELS =========================
+message Location {
+    double latitude = 1;
+    double longitude = 2;
+}
+
+// ========================= REQUESTS & RESPONSES =========================
+// General Requests (only id)
+message IncidentIdRequest {
+    string id = 1;
+}
+
+//empty
+message GetIncidentsRequest {}
+
+message GetNearbyIncidentsRequest {
+    double latitude = 1;
+    double longitude = 2;
+    int32 radius = 3;
+    string user_id = 4;
+}
+
+message UpdateStatusIncidentRequest {
+    string id = 1;
+    Status status = 2;
+}
+
+message UpdateIconIncidentRequest {
+    string id = 1;
+    int32 icon = 2;
+}
+
+
+// Static Incident
+message CreateIncidentStatictRequest {
+    double latitude = 1;
+    double longitude = 2;
+    string user_id = 3;
+    string description = 4;
+    string incident_type_id = 5;
+    Status status = 6;
+}
+
+message UpdateIncidentStatictRequest {
+    string id = 1;
+    IncidentStatic incident = 2;
+}
+
+message IncidentStaticResponse {
+    IncidentStatic incident = 1;
+    bool ok = 2;
+    string message = 3;
+}
+
+message IncidentsStaticResponse {
+    repeated IncidentStatic incidents = 1;
+    bool ok = 2;
+}
+
+// Mobile Incident
+message CreateIncidentMobileRequest {
+    double latitude = 1;
+    double longitude = 2;
+    string user_id = 3;
+    string transport_id = 4;
+    Status status = 5;
+}
+
+message UpdateIncidentMobileRequest {
+    string id = 1;
+    Location location = 2;
+}
+
+message IncidentMobileResponse {
+    IncidentMobile incident = 1;
+    bool ok = 2;
+    string message = 3;
+}
+
+
+message MessageResponse {
+    bool ok = 1;
+    string message = 2;
+}
+
+message IncidentsMobileResponse {
+    repeated IncidentMobile incidents = 1;
+    bool ok = 2;
+}
+
+// Get Incidents
+message GetNearbyIncidentsResponse {
+    repeated IncidentStatic incidents = 1;
+    repeated IncidentStatic my_incidents = 2;
+    repeated IncidentMobile incidents_mobiles = 3;
+    IncidentMobile my_incident_mobile = 4;
+    bool ok = 5;
+}
+
+
+// ========================= Verify Incident  =========================
+message VerfiyIncident {
+    string id= 1;
+    string incidentId = 2;
+    string userId = 3;
+    int32 option = 4;
+    int64 created_time = 5;
+    int64 updated_time = 6;
+}
+
+message CreateVerifyIncidentRequest {
+    string incidentId = 1;
+    string userId = 2;
+    int32 option = 3;
+}
+
+message GetVerifyIncidentRequest {
+    string id = 1;
+}
+
+message VerifyIncidentResponse {
+    VerfiyIncident verify = 1;
+    bool ok = 2;
+}
+
+message VerifysIncidentResponse {
+    repeated VerfiyIncident verifys = 1;
+    bool ok = 2;
+}
+
+// ========================= SERVICE =========================
+service IncidentService {
+    // Static Incidents
+    rpc CreateIncidentStatic(CreateIncidentStatictRequest) returns (IncidentStaticResponse);
+    rpc GetIncidentStatic(IncidentIdRequest) returns (IncidentStaticResponse);
+    rpc GetIncidentsStatic(GetIncidentsRequest) returns (IncidentsStaticResponse);
+    //udpated
+    rpc UpdateStatusIncidentStatic(UpdateStatusIncidentRequest) returns (MessageResponse);
+    rpc UpdateIconIncidentStatic(UpdateIconIncidentRequest) returns (MessageResponse);
+
+    // Mobile Incidents
+    rpc CreateIncidentMobile(CreateIncidentMobileRequest) returns (IncidentMobileResponse);
+    rpc GetIncidentMobile(IncidentIdRequest) returns (IncidentMobileResponse);
+    rpc GetIncidentsMobile(GetIncidentsRequest) returns (IncidentsMobileResponse);
+    //udpated
+    rpc UpdateIncidentLocationMobile(UpdateIncidentMobileRequest) returns (MessageResponse);
+    rpc UpdateStatusIncidentMobile(UpdateStatusIncidentRequest) returns (MessageResponse);
+
+    // Combined
+    rpc GetNearbyIncidents(GetNearbyIncidentsRequest) returns (GetNearbyIncidentsResponse);
+
+    //verifyIncident (static only)
+    rpc CreateVerifyIncident(CreateVerifyIncidentRequest) returns (VerifyIncidentResponse);
+    rpc GetVerifyIncident(GetVerifyIncidentRequest) returns (VerifyIncidentResponse);
+    rpc GetVerifysIncidentByUser(GetVerifyIncidentRequest) returns (VerifysIncidentResponse);
+    rpc GetVerifysIncidentByIncident(GetVerifyIncidentRequest) returns (VerifysIncidentResponse);
+}

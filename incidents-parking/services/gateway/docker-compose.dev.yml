@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  gateway-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    image: gateway-dev
+    container_name: gateway-dev
+    ports:
+      - "3000:3000"

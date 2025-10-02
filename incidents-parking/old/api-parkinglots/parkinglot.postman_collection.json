@@ -1,0 +1,256 @@
+{
+	"info": {
+		"_postman_id": "b77845f7-4cb7-42ff-a742-e35982d6d7b6",
+		"name": "parkinglot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16838938"
+	},
+	"item": [
+		{
+			"name": "Company",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_parkinglot}}/company/all",
+							"host": [
+								"{{api_parkinglot}}"
+							],
+							"path": [
+								"company",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Parking",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_parkinglot}}/parking/all",
+							"host": [
+								"{{api_parkinglot}}"
+							],
+							"path": [
+								"parking",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Services",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "lang",
+								"value": "en",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api_parkinglot}}/services",
+							"host": [
+								"{{api_parkinglot}}"
+							],
+							"path": [
+								"services"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Services By Parking",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "lang",
+								"value": "en",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api_parkinglot}}/services/parking/071d76ac-e8b9-49c9-82d0-c7e77739d524?lang=en",
+							"host": [
+								"{{api_parkinglot}}"
+							],
+							"path": [
+								"services",
+								"parking",
+								"071d76ac-e8b9-49c9-82d0-c7e77739d524"
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "en"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bookings",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "lang",
+								"value": "en",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api_parkinglot}}/booking?licensePlate=AAA 777&all=true",
+							"host": [
+								"{{api_parkinglot}}"
+							],
+							"path": [
+								"booking"
+							],
+							"query": [
+								{
+									"key": "licensePlate",
+									"value": "AAA 777"
+								},
+								{
+									"key": "userId",
+									"value": "dd8d4f93-9659-44a5-a8c1-ade9a0a3b399",
+									"disabled": true
+								},
+								{
+									"key": "parking",
+									"value": "76a9b17c-34e0-47e0-8ce0-99c97a4e5b60",
+									"disabled": true
+								},
+								{
+									"key": "all",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"dd8d4f93-9659-44a5-a8c1-ade9a0a3b399\", \r\n    \"userId\": \"dd8d4f93-9659-44a5-a8c1-ade9a0a3b399\", \r\n    \"initTime\": 1705620681,\r\n    \"endTime\": 1705624281,\r\n    \"hours\": 2,\r\n    \"licensePlate\": \"AAA 777\",\r\n    \"price\": 550,\r\n    \"parkingId\": \"76a9b17c-34e0-47e0-8ce0-99c97a4e5b60\",\r\n    \"description\": \"Reserva de estacionamiento con servicios adicionales\",\r\n    \"createdAt\": 0,\r\n    \"updatedAt\": 0,\r\n    \"servicesId\": [\r\n        \"dd8d4f93-9659-44a5-a8c1-ade9a0a3b399\",  // Safe Parking\r\n        \"e1c55b21-1da5-4363-a8bc-c6b7874939ab\",  // Cleaning Services\r\n        \"11854e51-e8b3-4793-a233-f43b6c26d96d\",  // Rest Areas\r\n        \"63e9ede5-6929-46ee-bd4f-442bd7564b4f\",  // Maintenance Services\r\n        \"2c2e9698-b9ca-4479-bfc6-50a60855d655\",  // Electric Connections\r\n        \"a275e68c-cd49-41a3-a02e-a8e26c4f52a0\",  // WiFi and Connectivity\r\n        \"38f68d60-bdde-4a85-bf09-72fabf05844f\",  // Dining Areas\r\n        \"62bcd2d0-ce52-417c-b044-175ff93adc58\",  // Sanitary Facilities\r\n        \"d1c02004-a4b2-4701-895a-fe0cb4aeb82d\"  // Driver Rest Areas\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_parkinglot}}/booking",
+							"host": [
+								"{{api_parkinglot}}"
+							],
+							"path": [
+								"booking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Booking Status",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "lang",
+								"value": "en",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"79d643cd-e063-4944-a575-2e8e3c4c7db1\",\r\n    \"id_status\": \"649f5cfe-1ca5-4694-93a8-f02e809c14aa\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_parkinglot}}/booking",
+							"host": [
+								"{{api_parkinglot}}"
+							],
+							"path": [
+								"booking"
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "en",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Status",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "lang",
+								"value": "en",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api_parkinglot}}/status",
+							"host": [
+								"{{api_parkinglot}}"
+							],
+							"path": [
+								"status"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,192 @@
+{
+  "App": {
+    "loginDirection": "Iniciar sesion como",
+    "companyMode": "Compañia",
+    "parkingMode": "Estacionamiento",
+    "welcomeTitle": "Bienvenido al Dashboard de {type}",
+    "welcomeSubtitle": "Seleccione una opcion del menu lateral para comenzar",
+    "login": "iniciar sesion",
+    "logout": "cerrar sesion",
+    "loading": "cargando",
+    "language": "idioma",
+    "auth": "Autentificacion",
+    "name": "nombre",
+    "amount": "monto",
+    "month": "mes",
+    "year": "año",
+    "password": "contraseña",
+    "update": "actualizar",
+    "status": "estado",
+    "services": "servicios",
+    "errorMail": "Introduzca un e-mail valido",
+    "errorPassword": "Introduzca una contraseña valida",
+    "edit": "editar",
+    "delete": "eliminar",
+    "viewservices": "ver servicios",
+    "balance": "balance",
+    "cancel": "cancelar",
+    "SideBar": {
+      "booking": "reserva",
+      "create": "crear",
+      "all": "ver todas",
+      "credits": "creditos",
+      "purchase": "comprar",
+      "faq": "FAQ",
+      "driver": "Conductor"
+    },
+    "Modals": {
+      "changestatus": "Cambiar estatus de {text}",
+      "deletebooking": "Cancelar {text}",
+      "cardholder": "nombre",
+      "code": "codigo",
+      "cardpayment": "Pagar con tarjeta",
+      "cardnumber": "Nro. de Tarjeta",
+      "expireIn": "Vence en",
+      "agreement": "Al facilitar los datos de su tarjeta, usted autoriza a la Empresa a cargar en su tarjeta futuros pagos de acuerdo con sus <guidelines>términos y condiciones</guidelines>.",
+      "subtotal": "subtotal",
+      "total": "total",
+      "pay": "pagar",
+      "sessionexpired": "Su sesion expiró",
+      "sessionexpiredIndication": "Inicie sesion nuevamente para seguir usando la aplicación",
+      "asigndriver": "Asignar conductor"
+    }
+  },
+  "dashboard": {
+    "welcome": "Bienvenido a Parkinglot",
+    "cards": {
+      "totalParkingsTitle": "Total Parkings",
+      "totalBookingActiveTitle": "Reservas Activas",
+      "totalBookingsActiveCta": "Ver todas",
+      "totalBookingCompletedTitle": "Reservas Completadas",
+      "totalBookingCompletedCta": "Crear",
+      "infoBuyCredits": {
+        "title": "Créditos",
+        "buyCredits": "Para comprar créditos: selecciona un plan o ingresa la cantidad que desees, llena los datos, paga y ya podrás usar tus créditos para las reservas.",
+        "cta": "COMPRAR AHORA",
+        "goToFaqs": "Si no sabes como realizar el proceso, accede al siguiente enlace",
+        "faqsCta": "¿Cómo comprar?"
+      },
+      "bookings": {
+        "title": "Reservas",
+        "helpText": "Puedes reservar la estadía en un estacionamiento teniendo en cuenta las fechas de entrada y salida, cantidad de horas, entre otros datos.",
+        "faqsCta": "¿Cómo crear una reserva?"
+      }
+    }
+  },
+  "credits": {
+    "buy": {
+      "checkout": "Ir a pagar",
+      "planstitle": "Lista de planes para reservas",
+      "selectPlan": "Seleccione el plan que mejor se ajuste a sus necesidades",
+      "classic": "clasico",
+      "custom": "personalizado",
+      "credits": "{count, plural, =0 {creditos} =1 {credito} other {creditos}}",
+      "unlimited": "ilimitado",
+      "customAmount": "personalizado",
+      "purchased": "Su compra fue exitosa",
+      "description": "descripción",
+      "errormessage": "La descripcion no puede tener mas de {number} caracteres"
+    },
+    "purchased": {
+      "success": "¡Compra realizada!",
+      "error": "Hubo un error al realizar la compra",
+      "redirectGood": "Para la visualizacion de los creditos será redirigido al inicio.",
+      "redirectError": "Se redirigirá a {credits} -> {purchase}"
+    }
+  },
+  "bookingTable": {
+    "tabletitle": "Tabla de reservas",
+    "user": "Usuario",
+    "checkin": "check in",
+    "checkout": "check out",
+    "hours": "horas",
+    "licensePlate": "matricula",
+    "price": "precio",
+    "parking": "estacionamiento",
+    "status": "estado",
+    "desc": "descripcion",
+    "createdat": "creado el",
+    "services": "servicios",
+    "actions": "accion",
+    "driver": "conductor",
+    "viewAll": "Ver todo",
+    "bookingExpired": "Tu reserva ha expirado."
+  },
+  "createBooking": {
+    "title": "Crear Reserva",
+    "subtitle": "Rellene el formulario de creacion de reserva",
+    "checkin": "check in",
+    "checkout": "check out",
+    "houramount": "cantidad de horas",
+    "licensePlate": "matricula del camión",
+    "containerLicensePlate": "matricula del remolque",
+    "parking": "estacionamiento",
+    "availableServices": "servicios disponibles",
+    "desc": "descripcion",
+    "create": "crear reserva",
+    "successfull": "reserva creada",
+    "price": "Precio"
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "subtitle": "En esta seccion podrás encontrar toda la informacion acerca de nuestros servicios",
+    "q1": {
+      "title": "¿Cómo crear una reserva?",
+      "subtitle": "Para crear una reserva es necesario seguir los siquientes pasos:",
+      "p1": "Introducir la fecha programada de entrada al estacionamiento, seguido de la fecha de salida.",
+      "p3": "Ingresar la matricula del camión que ingresará al estacionamiento.",
+      "p4": "Ingresar la matricula del remolque que ingresará al estacionamiento.",
+      "p5": "Seleccionar el estacionamiento donde se hará la reserva.",
+      "p7": "(Opcional) Agregar una descripción a su reserva.",
+      "p8": "Finalizar presionando el boton ''{text}''."
+    },
+    "q2": {
+      "title": "¿Cómo comprar créditos para sus reservas?",
+      "subtitle": "Para comprar créditos se debe hacer lo siguiente:",
+      "p1": "Seleccionar un plan especifico de los disponibles en la lista.",
+      "p2": "Presionar el boton ''{text}''.",
+      "p3": "Rellenar el formulario de pago con tarjeta con la informacion correspondiente al comprador (Nombre, Nro. de Tarjeta, Més, Año, CCV).",
+      "p4": "Finalizar la compra presionando el boton ''{text}''."
+    },
+    "parking": {
+      "q1": {
+        "title": "¿Cómo ver las reservas asignadas a su estacionamiento?",
+        "subtitle": "Para ver todas las reservas se debe hacer lo siguiente:",
+        "p1": "En el menu lateral hacer click en ''{booking}'' y luego ''{all}''.",
+        "p2": "En la tabla se pueden observar los campos de la reserva correspondientes, y dos botones: ''{edit}'' para cambiar el estado de la reserva y ''{delete}'' para eliminar la reserva asignada a su estacionamiento."
+      }
+    }
+  },
+  "drivers": {
+    "mobile": "Número de Móvil",
+    "role": "Rol",
+    "actions": "Accion",
+    "tableloading": "Cargando conductores...",
+    "status": "Estado",
+    "title": "Lista de conductores",
+    "register": "Registrar",
+    "modaltitle": "Registrar Conductor"
+  },
+  "termAndConditions": {
+    "title": "Términos y Condiciones",
+    "effectiveDate": "Fecha de vigencia: 05/01/2024",
+    "introductionTitle": "Introduction",
+    "introductionText": "¡Bienvenido a Crash Saver SL! Como acaba de hacer clic en nuestros Términos de Servicio, lea atentamente las siguientes páginas.",
+    "introductionText1": "Thank you for being responsible.",
+    "refundsTitle": "Reembolsos",
+    "refundsText": "De conformidad con lo dispuesto en los arts. 102 y ss. del Real Decreto Legislativo 1/2007, de 16 de noviembre, por el que se aprueba el texto refundido de la Ley General para la Defensa de los Consumidores y Usuarios y otras leyes complementarias, usted podrá desistir de las compras realizadas a través de este sitio web dentro de los 14 días naturales siguientes a la recepción de los bienes o productos, únicamente deberá cumplimentar y enviarnos el formulario adjunto dentro del plazo antes mencionado y por cualquier medio que permita acreditarlo, ya sea por correo certificado o correo electrónico. a la dirección administracion@crashsaverapp.com",
+    "refundsText1": "En caso de retiro, debe devolver dichos bienes o productos a esta empresa dentro de los 14 días naturales a partir de la fecha en que usted comunicó su decisión, con Los gastos de devolución correrán a cargo del cliente. Esta retirada no puede tener lugar cuando se trate de bienes o productos que puedan deteriorarse o caduquen rápidamente, bienes sellados o productos que no sean adecuados para devolución por motivos de salud o higiene, o que hayan sido sin sellar, o en cualesquiera otros casos previstos en el art. 103 de la normas legales antes mencionadas.",
+    "companyTitle": "Datos de la empresa",
+    "companyName": "Crash Saver SL",
+    "companyCif": "CIF: B10823417",
+    "companyAddress": "Dirección: Calle Palazón N12, Molina de Segura. Murcia Postal Code: 30500",
+    "companyContact": "Teléfono: (+34) 628 65 34 07",
+    "companyMail": "Correo electrónico: administracion@crashsaverapp.com",
+    "acceptConditionsCheck": "Acepto los términos y condiciones",
+    "continueCta": "Continuar y pagar",
+    "copyrigth": "Todos los derechos reservados",
+    "alertAssistence": "¿Necesita asistencia de emergencia para su vehículo en cualquier país de la Unión Europea?",
+    "assistenceCall1": "Llame al",
+    "assistenceCall2": "para recibir ayuda inmediata."
+  }
+}

@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  crashsaver-incidents:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    image: crashsaver-incidents-dev
+    container_name: crashsaver-incidents-dev
+    ports:
+      - "8080:8080"

@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  grpc:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: ["node", "dist/grpc.js"]
+    ports:
+      - "5051:5051"

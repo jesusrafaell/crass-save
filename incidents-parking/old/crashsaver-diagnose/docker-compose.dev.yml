@@ -1,0 +1,9 @@
+version: "3.8"
+
+services:
+  crashsaver-api-diagnose:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3002:3002"

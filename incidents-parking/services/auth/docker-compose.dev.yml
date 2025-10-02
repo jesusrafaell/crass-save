@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    command: ["node", "dist/app.js"]
+    ports:
+      - "4005:4005"
+
+  grpc:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    command: ["node", "dist/grpc.js"]
+    ports:
+      - "5051:5051"

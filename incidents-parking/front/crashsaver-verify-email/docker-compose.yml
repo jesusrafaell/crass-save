@@ -1,0 +1,9 @@
+version: "3.8"
+
+services:
+  crashsaver-verify-email:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "4000:4000"

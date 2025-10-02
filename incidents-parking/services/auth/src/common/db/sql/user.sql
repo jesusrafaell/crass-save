@@ -1,0 +1,25 @@
+CREATE TABLE IF NOT EXISTS public.auth_users
+(
+    id uuid NOT NULL DEFAULT uuid_generate_v4(),
+    created_at bigint DEFAULT EXTRACT(EPOCH FROM CURRENT_TIMESTAMP),
+    updated_at bigint DEFAULT EXTRACT(EPOCH FROM CURRENT_TIMESTAMP),
+    deleted_at bigint DEFAULT EXTRACT(EPOCH FROM CURRENT_TIMESTAMP),
+    first_name varchar(100) ,
+    last_name varchar(100),
+    email varchar(250),
+    password varchar(250),
+    mobile varchar(100) null,
+    distance_radius integer,
+    utc varchar(100),
+    fcm_token varchar(250),
+    guest boolean,
+    id_os uuid REFERENCES os(id) NULL,
+    id_status uuid REFERENCES status(id),
+    id_auth_roles uuid[] ,
+    id_transport_type uuid ,
+    id_auth_identification uuid ,
+    CONSTRAINT auth_users_pkey PRIMARY KEY (id),
+    CONSTRAINT auth_email_key UNIQUE (email),
+    CONSTRAINT auth_fcm_token_key UNIQUE (fcm_token),
+    CONSTRAINT mobile_key UNIQUE (mobile)
+)

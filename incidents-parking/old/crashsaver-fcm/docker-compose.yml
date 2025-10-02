@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  crashsaver-fcm:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: crashsaver-fcm
+    container_name: crashsaver-fcm
+    ports:
+      - "3005:3005"

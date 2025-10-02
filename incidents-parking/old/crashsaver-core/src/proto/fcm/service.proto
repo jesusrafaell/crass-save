@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package fcm;
+
+option go_package = "crashsaver/fcm/proto";
+
+message MessageFCM {
+    string fcmToken = 1;
+    string title = 2;
+    string message = 3;
+    string sound = 4;
+}
+
+message SendMessageFCMRequest {
+    MessageFCM fcm = 1;
+}
+
+message SendMessageFCMResponse {
+    MessageFCM fcm = 1;
+    bool ok = 2;
+}
+
+service FCMService {
+    rpc SendMessageFCM(SendMessageFCMRequest) returns (SendMessageFCMResponse);
+}

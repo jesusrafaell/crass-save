@@ -1,0 +1,46 @@
+gateway:
+  routes:
+    - name: Auth
+      context: /v1/api/auth
+      target: http://18.101.20.9:4005
+      version: 0
+    - name: Users
+      context: /v1/api/users
+      target: http://18.101.20.9:4005
+      version: 0
+    - name: Verify Token
+      context: /v1/api/verify-token
+      target: http://18.101.20.9:4005
+      version: 0
+    - name: Version mobile
+      context: /v1/api/version
+      target: http://18.101.20.9:4005
+      version: 0
+    - name: User Location
+      context: /v1/api/localization
+      target: http://18.101.20.9:4005
+      version: 0
+    - name: Notification
+      context: /v1/api/notification
+      target: http://18.101.20.9:4005
+      version: 0
+    - name: Parking
+      context: /v1/api/parking
+      target: http://18.101.20.9:4004
+      version: 1
+    - name: Incidents
+      context: /v1/api/incidents
+      target: http://18.101.20.9:8080
+      version: 1
+    - name: Incidents 2
+      context: /v2/api/incidents
+      target: http://18.101.20.9:8080
+      version: 1
+    - name: Verify Incidents
+      context: /v1/api/verifyIncidents
+      target: http://18.101.20.9:8080
+      version: 1
+    - name: Photos
+      context: /v1/api/photos
+      target: http://18.101.20.9:4007
+      version: 1

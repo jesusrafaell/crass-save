@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  crashsaver-send-msg:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: crashsaver-send-msg
+    container_name: crashsaver-send-msg
+    ports:
+      - "3005:3005"
